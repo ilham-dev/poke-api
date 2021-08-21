@@ -73,3 +73,8 @@
 2021-08-21 22:00:39[server.js] info: "::1 - - [21/Aug/2021:14:00:39 +0000] \"GET /api/pokemon/my-pokemon HTTP/1.1\" 200 579 \"-\" \"PostmanRuntime/7.28.2\"\n"
 2021-08-21 22:00:40[server.js] info: "::1 - - [21/Aug/2021:14:00:40 +0000] \"GET /api/pokemon/my-pokemon HTTP/1.1\" 200 579 \"-\" \"PostmanRuntime/7.28.2\"\n"
 2021-08-21 22:04:17[server.js] info: "::1 - - [21/Aug/2021:14:04:17 +0000] \"GET /api/pokemon/my-pokemon HTTP/1.1\" 200 579 \"-\" \"PostmanRuntime/7.28.2\"\n"
+2021-08-21 22:13:34[server.js] info: "::1 - - [21/Aug/2021:14:13:34 +0000] \"GET /api/pokemon HTTP/1.1\" 200 1395 \"-\" \"PostmanRuntime/7.28.2\"\n"
+2021-08-21 22:13:40[server.js] info: "::1 - - [21/Aug/2021:14:13:40 +0000] \"POST /api/pokemon HTTP/1.1\" 200 201 \"-\" \"PostmanRuntime/7.28.2\"\n"
+2021-08-21 22:13:46[server.js] info: "::1 - - [21/Aug/2021:14:13:46 +0000] \"GET /api/pokemon/my-pokemon HTTP/1.1\" 200 215 \"-\" \"PostmanRuntime/7.28.2\"\n"
+2021-08-21 22:13:54[server.js] info: "::1 - - [21/Aug/2021:14:13:54 +0000] \"DELETE /api/pokemon/1 HTTP/1.1\" 200 75 \"-\" \"PostmanRuntime/7.28.2\"\n"
+2021-08-21 22:13:58[server.js] info: "::1 - - [21/Aug/2021:14:13:58 +0000] \"GET /api/pokemon/my-pokemon HTTP/1.1\" 200 96 \"-\" \"PostmanRuntime/7.28.2\"\n"
