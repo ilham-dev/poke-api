@@ -1,17 +1,12 @@
 # Rest APIs Pokemon with Express JS
 
 ## Project setup
-```
-npm install or yarn install
-```
+#### Instalation Dependecies
+     npm install or yarn install
+#### Setup Your Env file with your Mysql database
+     cp .env.example .env
 
-```
-cp .env.example .env
-```
-```
-Setup Your Env file with your database
-```
-### Run
+### Running Project
 ```
 node server.js or nodemon
 ```
