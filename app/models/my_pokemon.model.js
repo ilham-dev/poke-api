@@ -3,8 +3,8 @@ module.exports = (sequelize, Sequelize) => {
         nickname: {
             type: Sequelize.STRING
         },
-        pokemon: {
-            type: Sequelize.STRING
+        pokemon_id: {
+            type: Sequelize.INTEGER
         },
         createdAt: {
             field: 'created_at',

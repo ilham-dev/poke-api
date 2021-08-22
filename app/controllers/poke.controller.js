@@ -7,12 +7,21 @@ var Helper = require("../config/helper");
 
 exports.getall = async (req, res) => {
     try {
+        var {
+            limit,
+            offset,
+        } = req.query;
+        
+        limit = limit ? limit : 20;
+        offset = offset ? offset : 0;
 
-        let url = 'https://pokeapi.co/api/v2/pokemon';
+        let url = 'https://pokeapi.co/api/v2/pokemon/'+'?limit='+limit+'&offset='+offset;
         var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
         const {
             data
         } = await axios.get(url);
+
         var populatepokemon = [];
         data.results.forEach(obj => {
             const splice = obj.url.split("/");
@@ -21,8 +30,21 @@ exports.getall = async (req, res) => {
                 'urls': fullUrl + '/' + splice[6],
             })
         });
-        return Helper.status(true, 200, 'Berhasil Menampilkan Data', populatepokemon, res);
+
+        const splice_next = data.next.split("/");
+        let splice_previous = data.previous ?  data.previous.split("/") : false;
+        splice_previous = splice_previous ? req.protocol + '://' + req.get('host') + '/api/pokemon/' + splice_previous[6] : fullUrl;
+
+        let results = {
+            'count' : data.count,
+            'next' : req.protocol + '://' + req.get('host') + '/api/pokemon/' + splice_next[6],
+            'previous' :  splice_previous ,
+            'data':populatepokemon
+        }
+        
+        return Helper.status(true, 200, 'Berhasil Menampilkan Data', results, res);
     } catch (err) {
+        console.log('errro',err);
         return Helper.status(false, 500, 'Gagal', err, res);
     }
 };
