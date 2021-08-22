@@ -11,7 +11,7 @@ exports.getall = async (req, res) => {
             limit,
             offset,
         } = req.query;
-        
+
         limit = limit ? limit : 20;
         offset = offset ? offset : 0;
 
@@ -97,7 +97,7 @@ exports.listpokemon = async (req, res) => {
                 let datapopulate = {
                     'data': data.rows,
                     'count': data.count,
-                    'pages': pages,
+                    'total_pages': pages,
                     'current_pages': page,
                     'limit': limit
                 }
