@@ -16,7 +16,7 @@ exports.getall = async (req, res) => {
         offset = offset ? offset : 0;
 
         let url = 'https://pokeapi.co/api/v2/pokemon/'+'?limit='+limit+'&offset='+offset;
-        var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+        var fullUrl = req.protocol + '://' + req.get('host') + "api/pokemon";
 
         const {
             data
