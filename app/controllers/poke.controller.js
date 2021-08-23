@@ -16,7 +16,7 @@ exports.getall = async (req, res) => {
         offset = offset ? offset : 0;
 
         let url = 'https://pokeapi.co/api/v2/pokemon/'+'?limit='+limit+'&offset='+offset;
-        var fullUrl = req.protocol + '://' + req.get('host') + "api/pokemon";
+        var fullUrl = req.protocol + '://' + req.get('host') + "/api/pokemon";
 
         const {
             data
@@ -34,7 +34,7 @@ exports.getall = async (req, res) => {
         const splice_next = data.next.split("/");
         let splice_previous = data.previous ?  data.previous.split("/") : false;
         splice_previous = splice_previous ? req.protocol + '://' + req.get('host') + '/api/pokemon/' + splice_previous[6] : fullUrl;
-
+        console.log(splice_previous);
         let results = {
             'count' : data.count,
             'next' : req.protocol + '://' + req.get('host') + '/api/pokemon/' + splice_next[6],
